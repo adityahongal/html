@@ -335,3 +335,15 @@ For JavaScript:
 
 Also placed in the `<head>`, the `defer` attribute ensures that the JavaScript is loaded after the HTML is parsed, preventing potential errors.
 
+☝ **Setting Primary language of the Document**
+
+Set your webpage's language by adding the "lang" attribute to the opening HTML tag, like this:
+
+```html
+<html lang="en-US">
+  <!-- Your content goes here -->
+</html>
+```
+
+This not only helps search engines index your document more effectively but also enhances accessibility for users, especially those with visual impairments who rely on screen readers.
+
