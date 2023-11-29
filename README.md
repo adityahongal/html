@@ -347,3 +347,162 @@ Set your webpage's language by adding the "lang" attribute to the opening HTML t
 
 This not only helps search engines index your document more effectively but also enhances accessibility for users, especially those with visual impairments who rely on screen readers.
 
+
+## HTML Text Fundamentals
+
+One of HTML's main jobs is to give text structure so that a browser can display an HTML document the way its developer intends.
+
+🖋️ **The basics - Headings and Paragraphs**
+
+Most structured text consists of headings and paragraphs, whether you are reading a story, a newspaper, a college textbook, a magazine, etc.
+
+Structured content makes the reading experience easier and more enjoyable.
+
+In HTML, each paragraph has to be wrapped in a <p> element, like so:
+```html
+<p>I am a paragraph, oh yes I am.</p>
+```
+
+Each heading has to be wrapped in a heading element:
+```html
+<h1>I am the title of the story.</h1>
+```
+
+There are six heading elements: h1, h2, h3, h4, h5, and h6. Each element represents a different level of content in the document; <h1> represents the main heading, <h2> represents subheadings, <h3> represents sub-subheadings, and so on.
+
+🖋️ **Implementing structural hierarchy**
+
+For example, in this story, the <h1> element represents the title of the story, the <h2> elements represent the title of each chapter, and the <h3> elements represent sub-sections of each chapter:
+
+```html
+<h1>The Crushing Bore</h1>
+
+<p>By Chris Mills</p>
+
+<h2>Chapter 1: The dark night</h2>
+
+<p>
+  It was a dark night. Somewhere, an owl hooted. The rain lashed down on the…
+</p>
+
+<h2>Chapter 2: The eternal silence</h2>
+
+<p>Our protagonist could not so much as a whisper out of the shadowy figure…</p>
+
+<h3>The specter speaks</h3>
+
+<p>
+  Several more hours had passed, when all of a sudden the specter sat bolt
+  upright and exclaimed, "Please have mercy on my soul!"
+</p>
+```
+
+When creating structural hierarchies in HTML, consider these best practices:
+
+1. Use a single `<h1>` per page as the top-level heading.
+2. Ensure the correct order of headings in the hierarchy. Avoid using, for instance, `<h3>` elements for subheadings followed by `<h2>` elements for sub-subheadings.
+3. Aim to use no more than three heading levels per page, unless absolutely necessary. Too many levels can make the document complex and challenging to navigate. In such cases, consider spreading the content across multiple pages.
+
+These guidelines help maintain a logical and organized structure for your content.
+
+🖋️ **Lists**
+
+Now, let's talk about lists. Lists are ubiquitous in daily life, from your shopping list to the steps you follow to reach your home. Similarly, on the web, there are three main types of lists to consider.
+
+**Unordered Lists**
+
+Unordered lists are for items where the order doesn't matter. For instance, a shopping list:
+
+Start with a `<ul>` element that wraps around all the list items:
+
+Wrap each item in a `<li>` (list item) element:
+
+```html
+<ul>
+  <li>milk</li>
+  <li>eggs</li>
+  <li>bread</li>
+  <li>hummus</li>
+</ul>
+```
+
+**Ordered Lists**
+
+Ordered lists are used when the order of items matters, like a set of directions:
+
+Markup is similar to unordered lists, but use `<ol>` (ordered list) instead of `<ul>`:
+
+```html
+<ol>
+  <li>Drive to the end of the road</li>
+  <li>Turn right</li>
+  <li>Go straight across the first two roundabouts</li>
+  <li>Turn left at the third roundabout</li>
+  <li>The school is on your right, 300 meters up the road</li>
+</ol>
+```
+
+**Nested Lists**
+
+It is perfectly OK to nest one list inside another one. You might want to have some sub-bullets sitting below a top-level bullet.
+
+```html
+<ol>
+  <li>Remove the skin from the garlic, and chop coarsely.</li>
+  <li>Remove all the seeds and stalk from the pepper, and chop coarsely.</li>
+  <li>Add all the ingredients into a food processor.</li>
+  <li>
+    Process all the ingredients into a paste.
+    <ul>
+      <li>
+        If you want a coarse "chunky" hummus, process it for a short time.
+      </li>
+      <li>If you want a smooth hummus, process it for a longer time.</li>
+    </ul>
+  </li>
+</ol>
+ 
+```
+
+🖋️ **Emphasis & Importance**
+
+HTML offers semantic elements to emphasize and mark up textual content, allowing you to convey importance or alter the meaning of sentences.
+
+**Emphasis**
+
+In HTML, the `<em>` (emphasis) element is used to mark up text when you want to add emphasis, similar to how we stress words in spoken language. This not only enhances readability but is also recognized by screen readers, which may convey the emphasized text differently. While browsers typically style `<em>` text as italic, it's important to note that this element is not meant for styling purposes alone.
+
+Example:
+
+```html
+<p>I am <em>glad</em> you weren't <em>late</em>.</p>
+```
+
+**Importance**
+
+In HTML, the `<strong>` element is used to emphasize important words, similar to stressing them in spoken language and bolding them in written language. This not only enhances the document's usefulness but is also recognized by screen readers, allowing them to convey the emphasized text differently. Although browsers typically style `<strong>` text as bold, it's crucial to note that this element serves a semantic purpose beyond styling.
+
+Example:
+
+```html
+<p>This liquid is <strong>highly toxic</strong>.</p>
+
+<p>I am counting on you. <strong>Do not</strong> be late!</p>
+```
+
+
+You can nest strong and emphasis inside one another if desired:
+
+```html
+<p>This liquid is <strong>highly toxic</strong> — if you drink it, <strong>you may <em>die</em></strong>.</p>
+```
+
+🖋️ **Italic,Bold and Underline**
+
+In HTML, the `<b>`, `<i>`, and `<u>` elements were originally introduced for styling text with bold, italics, or underline in a time when CSS support was limited. However, these are considered presentational elements, influencing appearance rather than semantics. With HTML5, they were redefined with new semantic roles, but their use is now discouraged in favor of more meaningful and accessible elements like `<strong>`, `<em>`, `<mark>`, or `<span>`.
+
+Here's a rule of thumb: Use `<b>`, `<i>`, or `<u>` only when there's no more suitable element, and always consider alternatives for better semantics. Accessibility is crucial, and elements like `<i>` may not be helpful for screen readers or users of different writing systems.
+
+- `<i>` conveys meaning traditionally expressed in italics, such as foreign words, taxonomic designations, technical terms, or thoughts.
+- `<b>` conveys meaning traditionally expressed in bold, like keywords, product names, or lead sentences.
+- `<u>` conveys meaning traditionally expressed with underline, such as proper names or misspellings.
