@@ -315,3 +315,23 @@ Specifying your document's character encoding
 ```
 In the above example,this element specifies the document's character encoding — the character set that the document is permitted to use. utf-8 is a universal character set that includes pretty much any character from any human language. This means that your web page will be able to handle displaying any language; it's therefore a good idea to set this on every web page you create!
 
+☝ **Applying CSS and Javascript to HTML**
+
+To enhance the appearance and functionality of websites, CSS and JavaScript are commonly used. In HTML, you employ the `<link>` element for CSS and the `<script>` element for JavaScript.
+
+For CSS:
+
+```html
+<link rel="stylesheet" href="my-css-file.css" />
+```
+
+This goes inside the `<head>` of your document.
+
+For JavaScript:
+
+```html
+<script src="my-js-file.js" defer></script>
+```
+
+Also placed in the `<head>`, the `defer` attribute ensures that the JavaScript is loaded after the HTML is parsed, preventing potential errors.
+
