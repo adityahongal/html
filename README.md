@@ -21,31 +21,31 @@ I'm a front end developer
 
 ## Roadmap
 
-🚀 "HTML Basics: Getting Started"
+🚀 **"HTML Basics: Getting Started"**
 
 Learn the fundamental concepts of HTML, including elements, attributes, and page structure. 
 
-🚀 "In the Head: HTML Metadata Simplified"
+🚀 **"In the Head: HTML Metadata Simplified"**
 
 Explore the unseen part of an HTML document—its head. Discover crucial metadata, including page title, CSS links for styling, custom favicons, and essential information about the document.
 
-🚀 Understanding HTML Text Semantics
+🚀 **Understanding HTML Text Semantics**
 
 HTML's primary role is to give text meaning, enabling proper display in browsers. Explore breaking up text with headings, paragraphs, adding emphasis, creating lists, and more using HTML.
 
-🚀 Mastering Hyperlinks in HTML
+🚀 **Mastering Hyperlinks in HTML**
 
 Explore the crucial role of hyperlinks in shaping the web. Learn the syntax for creating links and discover best practices for effective hyperlinking.
 
-🚀 Unveiling Advanced Text Formatting in HTML
+🚀 **Unveiling Advanced Text Formatting in HTML**
 
 Delve into lesser-known HTML elements for text formatting beyond the basics. Explore markup for quotations, description lists, code, subscript, superscript, contact information, and more.
 
-🚀 Crafting Document and Website Structure with HTML
+🚀 **Crafting Document and Website Structure with HTML**
 
 Beyond individual elements, HTML is key to defining the structure of your website. Learn how to plan a basic website structure and write HTML to represent sections like the header, navigation menu, and main content column.
 
-🚀 HTML Debugging Essentials
+🚀 **HTML Debugging Essentials**
 
 Writing HTML is one thing, but what if errors arise? Explore tools to troubleshoot and debug HTML code effectively in this informative article.
 
@@ -219,4 +219,99 @@ This example represents a simple HTML document structure with a title and a para
 
 
 ![Logo](https://github.com/adityahongal/html/blob/main/images/Screenshot%20(2).png)
+
+🧵 **Entity references: Including special characters in HTML**
+
+In HTML, certain characters like `<`, `>`, `"`, `'`, and `&` have special meanings in the syntax. To include them as regular text, use character references. These references start with `&` and end with `;`:
+
+- `<` is represented as `&lt;`
+- `>` is represented as `&gt;`
+- `"` is represented as `&quot;`
+- `'` is represented as `&apos;`
+- `&` is represented as `&amp;`
+
+The character reference equivalent could be easily remembered because the text it uses can be seen as less than for &lt;, quotation for &quot; and similarly for others.
+
+In the example below, there are two paragraphs:
+```html
+<p>In HTML, you define a paragraph using the <p> element.</p>
+
+<p>In HTML, you define a paragraph using the &lt;p&gt; element.</p>
+```
+In the output below, you can see that the first paragraph has gone wrong. The browser interprets the second instance of <p> as starting a new paragraph. The second paragraph looks fine because it has angle brackets with character references.
+
+```html
+In HTML, you define a paragraph using the
+
+element.
+
+In HTML, you define a paragraph using the <p> element.
+```
+
+🧵 **HTML comments**
+
+In HTML, comments are a way to include notes in the code for explanation or documentation purposes. Browsers ignore comments, making them invisible to users. Comments are useful for explaining logic, especially when revisiting code after some time, and they serve as valuable documentation when multiple people are working on the codebase.
+
+To write an HTML comment, wrap it in the special markers <!-- and -->. For example:
+
+```html
+<p>I'm not inside a comment</p>
+
+<!-- <p>I am!</p> -->
+
+```
+
+
+## What's in the head? Metadata in HTML
+
+☝️ **What is HTML Head ?**
+
+The HTML head is the contents of the <head> element. Unlike the contents of the <body> element (which are displayed on the page when loaded in a browser), the head's content is not displayed on the page. Instead, the head's job is to contain metadata about the document.
+```html
+<head>
+  <meta charset="utf-8" />
+  <title>My test page</title>
+</head>
+```
+
+☝️ **Adding a title**
+
+We've already seen the <title> element in action — this can be used to add a title to the document. This however can get confused with the h1 element, which is used to add a top level heading to your body content — this is also sometimes referred to as the page title. But they are different things!
+
+1. **`<h1>`** Element:
+   - Appears on the loaded page in the browser.
+   - Should be used once per page to mark up the main title of your content, such as a story title or news headline.
+
+2. **`<title>`** Element:
+   - Represents metadata for the overall HTML document.
+   - Reflects the title of the entire HTML document, not the content within the document.
+
+Example code and screenshot:
+```html
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>&lt;title&gt; element</title>
+  </head>
+  <body>
+    <h1>&lt;h1&gt; element</h1>
+  </body>
+</html>
+```
+
+![Logo](https://github.com/adityahongal/html/blob/main/images/diff%20between%20title%20%26%20h1.png)
+
+
+☝ **Metadata: the <meta> element**
+
+Metadata is data that describes data, and HTML has an "official" way of adding metadata to a document — the ```<meta>``` element.
+
+Specifying your document's character encoding
+
+```html 
+<meta charset="utf-8" /> 
+```
+In the above example,this element specifies the document's character encoding — the character set that the document is permitted to use. utf-8 is a universal character set that includes pretty much any character from any human language. This means that your web page will be able to handle displaying any language; it's therefore a good idea to set this on every web page you create!
 
