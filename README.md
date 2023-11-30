@@ -907,3 +907,157 @@ The `<time>` element in HTML is used for marking up times and dates in a machine
 ```
 
 The `<time>` element helps make dates and times machine-readable, allowing for better automation and interpretation by computers. The `datetime` attribute provides a standardized format for these machine-readable values.
+
+
+## Document and Website structure
+
+HTML uses block-level elements to define different sections of a website, such as the header, navigation menu, and main content column. This involves planning the basic structure of your website and creating HTML code to represent these sections.
+
+🏙️ **Basic sections of a Document**
+
+Webpages typically share common components, including:
+
+1. **Header:**
+   - Located at the top.
+   - Contains a prominent heading, logo, and possibly a tagline.
+   - Generally remains consistent across different pages.
+
+2. **Navigation Bar:**
+   - Features links to the main sections of the site.
+   - Represented by menu buttons, links, or tabs.
+   - Often remains consistent across various pages for user familiarity.
+
+3. **Main Content:**
+   - Central area that holds the unique content of a specific webpage.
+   - Varied content, such as videos, articles, maps, or headlines.
+
+4. **Sidebar:**
+   - Located on the side.
+   - Contains additional information, links, quotes, or ads.
+   - Contextual to the main content, providing supplementary details.
+
+5. **Footer:**
+   - Positioned at the bottom of the page.
+   - Includes fine print, copyright notices, or contact information.
+   - Sometimes utilized for SEO with links to popular content.
+
+While webpages may differ in appearance, these components form a standard structure, ensuring a consistent and user-friendly experience.
+
+🏙️ **HTML for structuring content**
+
+HTML provides specific tags to semantically mark up sections of content based on their functionality. Here are the main elements:
+
+1. **Header:**
+   - `<header>`
+
+2. **Navigation Bar:**
+   - `<nav>`
+
+3. **Main Content:**
+   - `<main>` for unique content on the page.
+   - `<article>` for a block of standalone content (e.g., a blog post).
+   - `<section>` for grouping related content or functionality.
+   - `<div>` for generic divisions.
+
+4. **Sidebar:**
+   - `<aside>` (often placed inside `<main>`)
+
+5. **Footer:**
+   - `<footer>`
+
+**HTML Layout Elements in Detail:**
+
+- `<main>`: For content unique to the page. Use only once per page, directly inside `<body>`. Avoid nesting within other elements.
+
+- `<article>`: Encloses a block of related content that makes sense on its own (e.g., a blog post).
+
+- `<section>`: Groups together a single part of the page, representing functionality or a theme. Consider using headings within each section.
+
+- `<aside>`: Contains content indirectly related to the main content (e.g., glossary entries, related links).
+
+- `<header>`: Represents a group of introductory content. Global header if a child of `<body>`, specific header if a child of `<article>` or `<section>`.
+
+- `<nav>`: Contains the main navigation functionality for the page.
+
+- `<footer>`: Represents a group of end content for a page.
+
+These elements aid in creating a structured and accessible HTML document. For detailed information on each element, refer to the "HTML element reference" section.
+
+🏙️ **Non Semantic Wrappers**
+
+When you encounter situations without an ideal semantic element to group or wrap content, HTML provides `<div>` and `<span>` for such cases. Use these with a class attribute for easy targeting with CSS or JavaScript.
+
+- **`<span>`:**
+  - Inline, non-semantic element.
+  - Use when a better semantic element is unavailable or when no specific meaning is desired.
+  - Example:
+
+    ```html
+    <p>
+      The King walked drunkenly back to his room at 01:00.
+      <span class="editor-note">
+        [Editor's note: At this point in the play, the lights should be down low].
+      </span>
+    </p>
+    ```
+
+- **`<div>`:**
+  - Block-level, non-semantic element.
+  - Use when a better semantic block element is unavailable or when no specific meaning is desired.
+  - Example (shopping cart widget):
+
+    ```html
+    <div class="shopping-cart">
+      <h2>Shopping cart</h2>
+      <ul>
+        <li>
+          <p>
+            <a href=""><strong>Silver earrings</strong></a>: $99.95.
+          </p>
+          <img src="../products/3333-0985/thumb.png" alt="Silver earrings" />
+        </li>
+        <li>…</li>
+      </ul>
+      <p>Total cost: $237.89</p>
+    </div>
+    ```
+
+In the shopping cart example, a `<div>` is suitable as it doesn't necessarily relate to the main content and can be viewed from anywhere on the site. The included heading aids screen reader users in locating it.
+
+🏙️ **Line breaks and horizontal rules**
+
+**<br>: the line break element**
+
+The `<br>` element creates a line break within a paragraph, providing a way to force a rigid structure, particularly useful for situations where fixed short lines are desired, such as in a postal address or a poem. Here's an example:
+
+```html
+<p>
+  There once was a man named O'Dell<br />
+  Who loved to write HTML<br />
+  But his structure was bad, his semantics were sad<br />
+  and his markup didn't read very well.
+</p>
+```
+
+Without the `<br>` elements, the paragraph would be rendered as one long line.
+
+**<hr>: the thematic break element**
+
+The `<hr>` element creates a horizontal rule in the document, serving as a visual separator to denote a thematic change in the text, such as a shift in topic or scene. Here's an example:
+
+```html
+<p>
+  Ron was backed into a corner by the marauding netherbeasts. Scared, but
+  determined to protect his friends, he raised his wand and prepared to do
+  battle, hoping that his distress call had made it through.
+</p>
+<hr />
+<p>
+  Meanwhile, Harry was sitting at home, staring at his royalty statement and
+  pondering when the next spin-off series would come out when an enchanted
+  distress letter flew through his window and landed in his lap. He read it
+  hazily and sighed; "better get back to work then," he mused.
+</p>
+```
+
+The `<hr>` element visually represents a horizontal line, indicating a clear separation between the paragraphs.
