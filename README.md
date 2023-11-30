@@ -564,3 +564,142 @@ This gives us the following result and hovering over the link displays the title
 
 https://github.com/adityahongal/html/blob/main/images/Creating%20first%20hyperlink.png
 
+🔗 **URLs and Paths**
+
+A URL, short for Uniform Resource Locator, is a text string specifying the location of something on the Web. For instance, Mozilla's English homepage is at https://www.mozilla.org/en-US/.
+
+URLs utilize paths to locate files, defining their position in the filesystem. Consider a directory structure, like the one in the "creating-hyperlinks" directory. The root, "creating-hyperlinks," encompasses an index.html file and a contacts.html file. In a live website, index.html typically serves as the home or landing page.
+
+Inside the root, there are two directories, "pdfs" and "projects," each containing a file—project-brief.pdf and index.html, respectively.
+
+1. **Same directory:**
+   To hyperlink from index.html to contacts.html, which is in the same directory, you directly specify the filename:
+   ```html
+   <p>Want to contact us? Visit our <a href="contacts.html">contacts page</a>.</p>
+   ```
+
+2. **Moving down into subdirectories:**
+   To link from index.html to projects/index.html, you navigate into the "projects" directory and then specify the file:
+   ```html
+   <p>Explore my <a href="projects/index.html">project homepage</a>.</p>
+   ```
+
+3. **Moving back up into parent directories:**
+   To link from projects/index.html to pdfs/project-brief.pdf, you go up a level and then into the "pdfs" directory:
+   ```html
+   <p>Access the <a href="../pdfs/project-brief.pdf">project brief</a>.</p>
+   ```
+
+This way, URLs help establish the structure and accessibility of files within a website.
+
+
+**Document Fragment**
+
+You can link to specific parts of an HTML document, known as document fragments, by assigning an `id` attribute to the desired element. Typically, linking to a heading is practical, like this:
+
+```html
+<h2 id="Mailing_address">Mailing address</h2>
+```
+
+To create a hyperlink to this specific id, append it to the URL preceded by a hash/pound symbol (#), as shown:
+
+```html
+<p>Write us a letter using our <a href="contacts.html#Mailing_address">mailing address</a>.</p>
+```
+
+You can also use the document fragment reference on its own to link to another part of the current document:
+
+```html
+<p>The <a href="#Mailing_address">company mailing address</a> is at the bottom of this page.</p>
+```
+
+This technique allows for precise navigation within a document.
+
+
+**Absolute Vs Relative URLs**
+
+There are two types of URLs: absolute and relative.
+
+**Absolute URL:**
+- Points to a location defined by its absolute web location, including the protocol and domain name.
+- Always refers to the same location, regardless of where it's used.
+- Example: `https://www.example.com/projects/index.html` or `https://www.example.com/projects/`.
+
+**Relative URL:**
+- Points to a location relative to the file you are linking from.
+- Example: If linking from `https://www.example.com/projects/index.html` to a PDF file in the same directory, the relative link is just the filename, like `project-brief.pdf`. If the PDF is in a subdirectory called `pdfs`, the relative link would be `pdfs/project-brief.pdf`.
+- The location it points to depends on the file's actual location; if you move the file, the link destination changes accordingly.
+- Be cautious when moving files, as it might lead to broken links if not managed carefully.
+
+**Best Practices for Writing Links:**
+
+1. **Use Clear Link Wording:**
+   - Provide descriptive link text that is meaningful out of context.
+   - Good: `<a href="https://www.mozilla.org/firefox/">Download Firefox</a>`
+   - Bad: `<a href="https://www.mozilla.org/firefox/">Click here</a> to download Firefox`
+
+2. **Avoid Repetitive or Redundant Link Text:**
+   - Don't repeat the URL in the link text.
+   - Don't include unnecessary phrases like "link" or "links to."
+
+3. **Keep Link Text Short:**
+   - Short link text is more manageable for screen readers.
+
+4. **Minimize Duplicating Link Text:**
+   - Avoid linking the same text to different destinations, especially when labeled with generic terms like "click here."
+
+5. **Linking to Non-HTML Resources — Clear Signposts:**
+   - When linking to downloadable, streamed, or content with unexpected effects, provide clear wording.
+   - Example: `<a href="https://www.example.com/large-report.pdf">Download the sales report (PDF, 10MB)</a>`
+
+6. **Use the Download Attribute for Downloads:**
+   - When linking to downloadable resources, use the download attribute to set a default save filename.
+   - Example: `<a href="download-link" download="filename">Download Latest Firefox for Windows (64-bit) (English, US)</a>`
+
+**Simple Navigation page example**
+
+The code -
+
+```html
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Homepage</title>
+  </head>
+
+  <body>
+    <!-- Navigation menu -->
+
+    <ul>
+      <li>Home</li>
+      <li><a href="pictures.html">Pictures</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="social.html">Social</a></li>
+    </ul>
+
+    <h1>Homepage</h1>
+
+    <p>Welcome to my exciting homepage</p>
+  </body>
+</html>
+
+```
+
+screenshot 
+
+https://github.com/adityahongal/html/blob/main/images/simple%20navigation%20page.png
+
+🔗 **Email Links**
+
+To create links or buttons that open a new outgoing email message, you can use the `<a>` element with the `mailto:` URL scheme. In its basic form, a `mailto:` link indicates the email address of the intended recipient. Here's an example:
+
+```html
+<a href="mailto:nowhere@mozilla.org">Send email to nowhere</a>
+```
+
+This creates a link that, when clicked, opens the user's email client to send an email to the specified address. If you omit the email address and use "mailto:", a new outgoing email window will be opened with no destination address. This can be useful for "Share" links, allowing users to choose their own email recipient.
+
+
+
