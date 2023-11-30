@@ -506,3 +506,61 @@ Here's a rule of thumb: Use `<b>`, `<i>`, or `<u>` only when there's no more sui
 - `<i>` conveys meaning traditionally expressed in italics, such as foreign words, taxonomic designations, technical terms, or thoughts.
 - `<b>` conveys meaning traditionally expressed in bold, like keywords, product names, or lead sentences.
 - `<u>` conveys meaning traditionally expressed with underline, such as proper names or misspellings.
+## Creating Hyperlinks
+
+🔗 **What is a Hyperlink ?**
+
+Hyperlinks are a fundamental feature of the Web, defining its interconnected nature. Since the inception of the Web, hyperlinks have enabled the linking of documents or resources, directing to specific sections or making applications accessible through web addresses (URLs). By converting web content into clickable links, users can seamlessly navigate between different web locations.
+
+🔗 **Anatomy of a Link**
+
+A basic link is created by wrapping the text or other content inside an <a> element and using the href attribute, also known as a Hypertext Reference, or target, that contains the web address.
+
+```html
+<p>
+  I'm creating a link to
+  <a href="https://www.mozilla.org/en-US/">the Mozilla homepage</a>.
+</p>
+```
+
+**Block Level Links**
+
+Almost any content can be made into a link, even block-level elements. If you want to make a heading element a link then wrap it in an anchor (<a>) element as shown in the following code snippet:
+
+```html
+<a href="https://developer.mozilla.org/en-US/">
+  <h1>MDN Web Docs</h1>
+</a>
+<p>
+  Documenting web technologies, including CSS, HTML, and JavaScript, since 2005.
+</p>
+```
+
+**Image Link**
+
+If you have an image you want to make into a link, use the <a> element to wrap the image file referenced with the <img> element. The example below uses a relative path to reference a locally stored PNG image file.
+
+```html
+<a href="https://developer.mozilla.org/en-US/">
+  <img src="mdn_logo.png" alt="MDN Web Docs" />
+</a>
+```
+
+**Adding supporting information with the title attribute**
+
+Another attribute you may want to add to your links is title. The title contains additional information about the link, such as which kind of information the page contains, or things to be aware of on the website.
+
+```html
+<p>
+  I'm creating my first hyperlink to my YOUTUBE
+  <a
+    href="https://www.youtube.com/watch?v=msokY714Wzg"
+    title="Checkout my Music Video on Youtube"> click here for link
+    </a>.
+  </p>
+```
+
+This gives us the following result and hovering over the link displays the title as a tooltip:
+
+https://github.com/adityahongal/html/blob/main/images/Creating%20first%20hyperlink.png
+
