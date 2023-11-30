@@ -705,3 +705,205 @@ This creates a link that, when clicked, opens the user's email client to send an
 
 
 
+
+## Advanced Text Formatting
+
+🌂 **Description Lists**
+
+Description lists in HTML are used to mark up a set of items and their associated descriptions. They are typically used for terms and definitions, or questions and answers.
+
+Here's a simple example:
+
+```html
+<dl>
+  <dt>HTML</dt>
+  <dd>HyperText Markup Language</dd>
+
+  <dt>CSS</dt>
+  <dd>Cascading Style Sheets</dd>
+
+  <dt>JavaScript</dt>
+  <dd>A programming language that enables interactive web pages</dd>
+</dl>
+```
+
+In this example:
+
+- `<dl>` is the description list container. (description list)
+- `<dt>` is used for the term or item.      (description term)
+- `<dd>` is used for the description or definition associated with the term.                                   (description definition)
+
+This creates a structured list where each term is followed by its corresponding description.
+
+🌂 **Quotations**
+
+**Blockquotes**
+
+Blockquotes are used in HTML to indicate that a section of content is quoted from another source. If you have a block of content, like a paragraph or multiple paragraphs, that is a quote, you can wrap it in a `<blockquote>` element. You can also include a `cite` attribute with a URL pointing to the source of the quote. Here's an example:
+
+```html
+<p>Here is a blockquote:</p>
+<blockquote cite="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blockquote">
+  <p>
+    The <strong>HTML <code>&lt;blockquote&gt;</code> Element</strong> (or
+    <em>HTML Block Quotation Element</em>) indicates that the enclosed text is
+    an extended quotation.
+  </p>
+</blockquote>
+```
+
+The browser will typically render this with default styling, such as indentation, to visually distinguish the blockquote from the surrounding content.
+
+**Inline quotes**
+
+Inline quotations work in exactly the same way, except that they use the <q> element. For example, the below bit of markup contains a quotation from the MDN <q> page:
+
+```html
+<p>
+  The quote element — <code>&lt;q&gt;</code> — is
+  <q cite="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/q">
+    intended for short quotations that don't require paragraph breaks.
+  </q>
+</p>
+```
+
+Browser default styling will render this as normal text put in quotes to indicate a quotation.
+
+```html
+The quote element — <q> — is ❝ intended for short quotations that don't require paragraph breaks. ❞
+```
+
+**Citations**
+
+The cite attribute is not widely utilized by browsers, screen readers, etc. It doesn't directly affect how the browser displays the content. To make the source of a quotation visible on the page, it's recommended to include it in the text, perhaps by linking the citation. The `<cite>` element can be used to contain the title of the resource being quoted, like the name of a book. However, you can link the text inside `<cite>` to the source of the quote. Here's an example:
+
+```html
+<p>
+  According to the
+  <a href="/en-US/docs/Web/HTML/Element/blockquote">
+    <cite>MDN blockquote page</cite>
+  </a>:
+</p>
+
+<blockquote
+  cite="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blockquote">
+  <p>
+    The <strong>HTML <code>&lt;blockquote&gt;</code> Element</strong> (or
+    <em>HTML Block Quotation Element</em>) indicates that the enclosed text is
+    an extended quotation.
+  </p>
+</blockquote>
+
+<p>
+  The quote element — <code>&lt;q&gt;</code> — is
+  <q cite="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/q">
+    intended for short quotations that don't require paragraph breaks.
+  </q>
+  — <a href="/en-US/docs/Web/HTML/Element/q"><cite>MDN q page</cite></a>.
+</p>
+```
+
+Citations are styled in italic font by default.
+
+
+🌂 **Abbreviations**
+
+The `<abbr>` element is used to mark up an abbreviation or acronym. It's recommended to provide a full expansion of the term in plain text on first use along with the `<abbr>` element. If adding the expansion seems impractical, especially for short terms, you can use the `title` attribute to provide the full expansion. Here's an example:
+
+```html
+<p>
+  The <abbr title="World Health Organization">WHO</abbr> is a specialized agency
+  of the United Nations responsible for international public health.
+</p>
+```
+
+In this example, the `<abbr>` element is used to mark the abbreviation "WHO," and the `title` attribute provides the full expansion, "World Health Organization." This helps user agents and informs users about the meaning of the abbreviation.
+
+**Marking up contact details**
+
+HTML has an element for marking up contact details — <address>. This wraps around your contact details, for example:
+
+```html
+<address>Chris Mills, Manchester, The Grim North, UK</address>
+```
+It could also include more complex markup, and other forms of contact information, for example:
+
+```html
+<address>
+  <p>
+    Chris Mills<br />
+    Manchester<br />
+    The Grim North<br />
+    UK
+  </p>
+
+  <ul>
+    <li>Tel: 01234 567 890</li>
+    <li>Email: me@grim-north.co.uk</li>
+  </ul>
+</address>
+```
+
+
+🌂 **Superscript and Subscript**
+
+You will occasionally need to use superscript and subscript when marking up items like dates, chemical formulae, and mathematical equations so they have the correct meaning. The <sup> and <sub> elements handle this job. For example:
+
+```html
+<p>My birthday is on the 25<sup>th</sup> of May 2001.</p>
+<p>
+  Caffeine's chemical formula is
+  C<sub>8</sub>H<sub>10</sub>N<sub>4</sub>O<sub>2</sub>.
+</p>
+<p>If x<sup>2</sup> is 9, x must equal 3 or -3.</p>
+
+```
+
+🌂 **Representing computer code**
+
+There are a number of elements available for marking up computer code using HTML:
+
+**<code>**: For marking up generic pieces of computer code.
+
+**<pre>**: For retaining whitespace (generally code blocks) — if you use indentation or excess whitespace inside your text, browsers will ignore it and you will not see it on your rendered page. If you wrap the text in **<pre></pre>** tags however, your whitespace will be rendered identically to how you see it in your text editor.
+
+**<var>**: For specifically marking up variable names.
+
+**<kbd>**: For marking up keyboard (and other types of) input entered into the computer.
+
+**<samp>**: For marking up the output of a computer program.
+
+
+🌂 **Marking up Times and Dates**
+
+The `<time>` element in HTML is used for marking up times and dates in a machine-readable format. Here's a simplified example with various options:
+
+```html
+<!-- Standard simple date -->
+<time datetime="2016-01-20">20 January 2016</time>
+
+<!-- Just year and month -->
+<time datetime="2016-01">January 2016</time>
+
+<!-- Just month and day -->
+<time datetime="01-20">20 January</time>
+
+<!-- Just time, hours and minutes -->
+<time datetime="19:30">19:30</time>
+
+<!-- You can do seconds and milliseconds too! -->
+<time datetime="19:30:01.856">19:30:01.856</time>
+
+<!-- Date and time -->
+<time datetime="2016-01-20T19:30">7.30pm, 20 January 2016</time>
+
+<!-- Date and time with timezone offset -->
+<time datetime="2016-01-20T19:30+01:00">
+  7.30pm, 20 January 2016 is 8.30pm in France
+</time>
+
+<!-- Calling out a specific week number -->
+<time datetime="2016-W04">The fourth week of 2016</time>
+```
+
+The `<time>` element helps make dates and times machine-readable, allowing for better automation and interpretation by computers. The `datetime` attribute provides a standardized format for these machine-readable values.
