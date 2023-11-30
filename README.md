@@ -562,7 +562,8 @@ Another attribute you may want to add to your links is title. The title contains
 
 This gives us the following result and hovering over the link displays the title as a tooltip:
 
-https://github.com/adityahongal/html/blob/main/images/Creating%20first%20hyperlink.png
+![Alt hyperlinkexample](https://github.com/adityahongal/html/blob/main/images/Creating%20first%20hyperlink.png)
+
 
 🔗 **URLs and Paths**
 
@@ -689,7 +690,7 @@ The code -
 
 screenshot 
 
-https://github.com/adityahongal/html/blob/main/images/simple%20navigation%20page.png
+![Alt navigationpage](https://github.com/adityahongal/html/blob/main/images/simple%20navigation%20page.png)
 
 🔗 **Email Links**
 
@@ -700,6 +701,7 @@ To create links or buttons that open a new outgoing email message, you can use t
 ```
 
 This creates a link that, when clicked, opens the user's email client to send an email to the specified address. If you omit the email address and use "mailto:", a new outgoing email window will be opened with no destination address. This can be useful for "Share" links, allowing users to choose their own email recipient.
+
 
 
 
