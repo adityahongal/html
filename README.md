@@ -1061,3 +1061,56 @@ The `<hr>` element creates a horizontal rule in the document, serving as a visua
 ```
 
 The `<hr>` element visually represents a horizontal line, indicating a clear separation between the paragraphs.
+
+## Multimedia and Embedding
+
+📷 **Images in HTML**
+
+The <img> element is a fundamental part of web development, allowing the incorporation of images into web pages. In addition to covering the basics of using the <img> element, we'll explore advanced features such as captioning with <figure>, its connection to CSS background images, and introduce various other graphics available for the web platform.
+
+📷 **How do we put an image on a webpage?**
+
+To add a simple image to a web page, use the <img> element. This is a void element (meaning, it cannot have any child content and cannot have an end tag) that requires two attributes to be useful: src and alt. The src attribute contains the URL pointing to the image you want to embed, and alt provides alternative text for accessibility. For instance, if your image is named "dinosaur.jpg" in the same directory as your HTML page, you can include it like this:
+
+```html
+<img src="dinosaur.jpg" alt="Dinosaur" />
+```
+
+If the image is in an "images" subdirectory within the same directory as the HTML page, the code would be:
+
+```html
+<img src="images/dinosaur.jpg" alt="Dinosaur" />
+```
+
+Adjust the file path accordingly based on the image's location.
+
+You can also embed the image using its absolute URL, like this:
+
+```html
+<img src="https://www.example.com/images/dinosaur.jpg" alt="Dinosaur" />
+```
+
+However, it's generally not recommended to link via absolute URLs. It's better to host the images on your site, keeping them on the same server as your HTML. Using relative URLs is more efficient for maintenance; if you ever move your site to a different domain, you won't need to update all your URLs to include the new domain.
+
+example -
+
+![Alt Images in HTML](https://github.com/adityahongal/html/blob/main/images/images%20in%20html.png)
+
+
+**Alternative Text**
+
+The next attribute we'll look at is `alt`. Its value is supposed to be a textual description of the image, for use in situations where the image cannot be seen or takes a long time to render because of a slow internet connection. For example:
+
+```html
+<img
+  src="images/dinosaur.jpg"
+  alt="The head and torso of a dinosaur skeleton;
+          it has a large head with long sharp teeth" />
+```
+
+The `alt` attribute provides a description of the image content, making it accessible in scenarios where the image is not visible.
+
+Example - 
+
+![Alt Alternative text](https://github.com/adityahongal/html/blob/main/images/alternative%20text%20in%20html.png)
+
