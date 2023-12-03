@@ -1114,3 +1114,49 @@ Example -
 
 ![Alt Alternative text](https://github.com/adityahongal/html/blob/main/images/alternative%20text%20in%20html.png)
 
+`alt` **text serves various purposes:**
+
+1. **Accessibility for Visually Impaired Users:** Users with visual impairments rely on screen readers to interpret web content. Providing descriptive `alt` text ensures these users can understand the content conveyed by images.
+
+2. **Error Handling:** If an image fails to load due to a misspelled filename or a broken URL, the `alt` text is displayed instead, providing a meaningful description of the intended image.
+
+3. **Compatibility with Text-Only Browsers:** Text-only browsers, like Lynx, can only display text content. `alt` text allows users of such browsers to comprehend the content of images.
+
+4. **Search Engine Optimization (SEO):** Search engines use `alt` text to understand the content of images. Including relevant and descriptive `alt` text can improve the search engine ranking of a webpage.
+
+5. **User Preference for Reduced Data Transfer:** Users may disable image loading, particularly on mobile devices or in regions with limited bandwidth. In such cases, `alt` text provides context and information about the images.
+
+By incorporating descriptive `alt` text, web developers enhance the overall accessibility, usability, and search engine visibility of their content.
+
+What exactly should you write inside your `alt` attribute? It depends on why the image is there in the first place. In other words, what you lose if your image doesn't show up:
+
+1. **Decoration.** You should use CSS background images for decorative images, but if you must use HTML, add a blank `alt=""`. If the image isn't part of the content, a screen reader shouldn't waste time reading it.
+2. **Content.** If your image provides significant information, provide the same information in a brief alt text – or even better, in the main text which everybody can see. Don't write redundant alt text. How annoying would it be for a sighted user if all paragraphs were written twice in the main content? If the image is described adequately by the main text body, you can just use `alt=""`.
+3. **Link.** If you put an image inside `<a>` tags, to turn an image into a link, you still must provide accessible link text. In such cases you may, either, write it inside the same `<a>` element, or inside the image's alt attribute – whichever works best in your case.
+4. **Text.** You should not put your text into images. If your main heading needs a drop shadow, for example, use CSS for that rather than putting the text into an image. However, If you really can't avoid doing this, you should supply the text inside the alt attribute.
+
+Essentially, the key is to deliver a usable experience, even when the images can't be seen. This ensures all users are not missing any of the content. Try turning off images in your browser and see how things look. You'll soon realize how helpful alt text is if the image cannot be seen.
+
+
+📷 **Width and Height**
+
+You can use the `width` and `height` attributes to specify the dimensions of your image. These attributes are expressed as integers, representing the image's width and height in pixels.
+
+```html
+<img
+  src="images/dinosaur.jpg"
+  alt="The head and torso of a dinosaur skeleton;
+       it has a large head with long sharp teeth"
+  width="400"
+  height="341"
+/>
+```
+
+Including these attributes is beneficial because the HTML and images are fetched as separate resources. When the browser receives the HTML, it starts rendering the page to the user even before the images are fully loaded. Specifying dimensions helps reserve space for the image, preventing sudden layout shifts when the image is eventually loaded.
+
+Example -
+
+![Alt width height](https://github.com/adityahongal/html/blob/main/images/width%20and%20height.png)
+
+
+
