@@ -1159,4 +1159,18 @@ Example -
 ![Alt width height](https://github.com/adityahongal/html/blob/main/images/width%20and%20height.png)
 
 
+📷 **Image Titles**
 
+As with links, you can also add `title` attributes to images, to provide further supporting information if needed. In our example, we could do this:
+
+```html
+<img
+  src="images/dinosaur.jpg"
+  alt="The head and torso of a dinosaur skeleton;
+          it has a large head with long sharp teeth"
+  width="400"
+  height="341"
+  title="A T-Rex on display in the Manchester University Museum" />
+```
+
+This gives us a tooltip on mouse hovering.
