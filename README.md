@@ -1174,3 +1174,49 @@ As with links, you can also add `title` attributes to images, to provide further
 ```
 
 This gives us a tooltip on mouse hovering.
+
+📷 **Media Assets and Licensing**
+
+Images (and other media asset types) you find on the web are released under various license types. Before you use an image on a site you are building, ensure you own it, have permission to use it, or comply with the owner's licensing conditions.
+
+Understanding license types
+
+💲**All rights reserved**
+
+When creators release their work with closed copyright protection (all rights reserved), it means they have exclusive rights. To use such content:
+
+1. **Obtain Permission or Pay Fee:**
+   - Get written permission or pay a license fee (one-time or rights-managed).
+   - Fees may vary based on use details like time, region, industry, etc.
+
+2. **Adhere to Fair Use:**
+   - Limit use to what's considered fair use or fair dealing in your jurisdiction.
+
+3. **Assume Copyright Protection:**
+   - Authors aren't required to include notices.
+   - If no copyright info is visible, assume it's protected; safest to assume all rights are reserved.
+
+💲**Permissive**
+
+If an image has a permissive license like MIT, BSD, or a Creative Commons license, you can use it without paying a fee or seeking permission. However, you must adhere to specific conditions:
+
+1. **Credit and Link:**
+   - Provide a link to the original source and credit the creator.
+
+2. **Changes and Derivatives:**
+   - Specify if you made changes.
+   - Share derivative works under the same license.
+
+3. **Usage Restrictions:**
+   - Some licenses may restrict commercial use or sharing of derivatives.
+
+4. **Include License:**
+   - Include a copy of the license with any work using the image.
+
+Check the specific license for detailed terms and conditions.
+
+***NOTE -***
+
+Copyleft licenses, common in the software world, require projects built with their code to adopt the same license. This means that any new project using this code, known as a "fork," must also be open-source. Examples include the GNU General Public License (GPL) and "Share Alike" Creative Commons licenses. It ensures that the source code remains accessible for study and modification. Note that software licenses like GPL are not suitable for non-software works as they were designed specifically for software.
+
+
