@@ -1368,3 +1368,53 @@ In this example:
 - A fallback `<p>` element provides a link if the browser can't play the video.
 
 This approach maximizes compatibility and ensures a better user experience.
+
+**Other <video> features**
+
+To enhance the display of an HTML video, consider additional features as shown in the example below:
+
+```html
+<video
+  controls
+  width="400"
+  height="400"
+  autoplay
+  loop
+  muted
+  preload="auto"
+  poster="images/poster.png">
+  <source src="videos/rabbit320.mp4" type="video/mp4" />
+  <source src="videos/rabbit320.webm" type="video/webm" />
+  <p>Your browser doesn't support this video. Here is a <a href="rabbit320.mp4">link to the video</a> instead.</p>
+</video>
+```
+
+The resulting will look like - 
+
+![Alt video features](https://github.com/adityahongal/html/blob/main/images/video%20features.png)
+
+Here are explanations of the additional features used in the video example:
+
+- **width and height:**
+  - Control the video size, maintaining the aspect ratio.
+  - If the aspect ratio is not maintained, the video will fill the space horizontally, with unfilled space receiving a default background color.
+
+- **autoplay:**
+  - Initiates audio or video playback as soon as the page starts loading.
+  - It's generally advised not to use autoplay to avoid user annoyance.
+
+- **loop:**
+  - Causes the video or audio to restart automatically when it finishes playing.
+  - Use sparingly, as constant looping can be disruptive.
+
+- **muted:**
+  - Defaults the media to play with the sound turned off.
+
+- **poster:**
+  - Specifies the URL of an image displayed before video playback.
+  - Useful for a splash screen or advertising screen.
+
+- **preload:**
+  - Controls buffering for large files.
+  - Options include "none" (no buffering), "auto" (buffers the entire media file), and "metadata" (buffers only the metadata).
+
