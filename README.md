@@ -1447,3 +1447,67 @@ The `<audio>` element is more compact than a video player as it lacks a visual c
 - Multiple `<source>` elements can be used for different audio formats.
 - Fallback content can be included for unsupported browsers using additional HTML content within the `<audio>` element.
 
+🦯 **Displaying video text tracks**
+
+In HTML video, you can provide accessibility features such as transcripts for people who may not be able to hear or understand the audio content. This is especially helpful for those with auditory impairments or in situations where playing audio is impractical. The WebVTT (Web Video Text Tracks) file format and the `<track>` element are used for this purpose.
+
+**WebVTT Overview:**
+- WebVTT is a format for text files containing strings of text along with metadata like the time in the video when each text string should be displayed.
+- Cues are the text strings, and they come in different types, including subtitles for translations, captions for transcriptions of dialog, and timed descriptions for visually impaired users.
+
+**Common Cues:**
+1. **Subtitles:**
+   - Provide translations of foreign material for those who don't understand the spoken words in the audio.
+
+2. **Captions:**
+   - Synchronized transcriptions of dialog or descriptions of significant sounds, aiding those who can't hear the audio.
+
+3. **Timed Descriptions:**
+   - Text spoken by the media player to describe important visuals for blind or visually impaired users.
+
+By incorporating WebVTT and the `<track>` element, you can enhance the accessibility of your video content, making it more inclusive for a diverse audience.
+
+A standard WebVTT file appears like this:
+
+```plaintext
+WEBVTT
+
+1
+00:00:22.230 --> 00:00:24.606
+This is the first subtitle.
+
+2
+00:00:30.739 --> 00:00:34.074
+This is the second.
+
+...
+```
+
+To display this alongside HTML media playback, follow these steps:
+
+1. Save it as a .vtt file in an appropriate location.
+2. Link to the .vtt file using the `<track>` element. Place `<track>` within `<audio>` or `<video>`, after all `<source>` elements. Use the `kind` attribute to specify whether the cues are subtitles, captions, or descriptions. Additionally, use `srclang` to inform the browser of the language and add `label` to help users identify the language they are seeking.
+
+Here's an example:
+
+```html
+<video controls>
+  <source src="example.mp4" type="video/mp4" />
+  <source src="example.webm" type="video/webm" />
+  <track kind="subtitles" src="subtitles_es.vtt" srclang="es" label="Spanish" />
+</video>
+```
+
+In this example, the WebVTT file "subtitles_es.vtt" contains Spanish subtitles for the video. The `<track>` element specifies the kind of content, the source file, language, and label for better identification.
+
+
+## From object to iframe — other embedding technologies
+
+At this stage, you've likely mastered the art of embedding content like images, videos, and audio in your web pages. Now, let's take a slight detour to explore elements that enable you to embed a diverse range of content types: the `<iframe>`, `<embed>`, and `<object>` elements. `<iframe>` is ideal for embedding entire web pages, while `<embed>` and `<object>` facilitate the embedding of external resources, such as PDF files.
+
+These elements provide versatile options for enhancing the richness of your web content.
+
+Example of embedding a youtube video and google maps
+
+![Alt maps](https://github.com/adityahongal/html/blob/main/images/embedding%20maps.png)
+
