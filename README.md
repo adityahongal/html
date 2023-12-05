@@ -1286,3 +1286,85 @@ These advanced graphics technologies offer dynamic, interactive, and multimedia-
 
 🎥 **Video and Audio content**
 
+The first influx of online videos and audio were made possible by proprietary plugin-based technologies like Flash and Silverlight, but they had security and accessibility problems. Now, we use native HTML elements like `<video>` and `<audio>` along with JavaScript for better security and compatibility.
+
+🎥 **The <video> content**
+
+To easily embed a video using the `<video>` element, we use the following simple example:
+
+```html
+<video src="videos/rabbit320.webm" controls>
+
+  <p>Your browser doesn't support HTML video. Here is a <a href="rabbit320.webm">link to the video</a> instead.
+  </p>
+</video>
+```
+
+Key features:
+
+- **src:** Specifies the path to the video file, similar to the `<img>` element.
+- **controls:** Adds the browser's control interface for users to manage playback.
+- **Fallback Content:** The paragraph provides an alternative for browsers that don't support `<video>`, offering a direct link to the video.
+
+The embedded video looks like 
+
+![Alt basic video](https://github.com/adityahongal/html/blob/main/images/basic%20video%20element.png)
+
+
+🎥 **Using multiple source formats to improve compatibility**
+
+There's a problem with the above example. It is possible that the video might not play for you, because different browsers support different video (and audio) formats. Fortunately, there are things you can do to help prevent this from being an issue.
+
+**Contents of a media file**
+
+Media files use container formats like MP3, MP4, and WebM, organizing audio and video tracks with metadata. Each track uses specific codecs for encoding. Browser support varies based on these formats:
+
+- **WebM Container:**
+  - Typically contains Vorbis/Opus audio with VP8/VP9 video.
+  - Supported in all modern browsers.
+
+- **MP4 Container:**
+  - Often packages AAC/MP3 audio with H.264 video.
+  - Supported in all modern browsers.
+
+- **Ogg Container:**
+  - Uses Vorbis audio and Theora video.
+  - Best supported in Firefox and Chrome but largely superseded by WebM.
+
+Special Cases:
+
+- **FLAC Codec:**
+  - Commonly stored in FLAC files without containers.
+
+- **MP3 File:**
+  - MPEG-1 Audio Layer III audio in an MPEG/MPEG-2 container.
+  - Widely supported, even if browsers don't fully support MPEG media.
+
+Audio players can directly play audio tracks like MP3 or Ogg files without containers.
+
+**Media file support in browsers**
+
+Codecs compress audio and video for efficient file sizes, but browsers support different codecs and container formats. For widespread compatibility, media files may need to be provided in multiple formats. Compatibility issues arise when a user's browser and a website don't share a common media format.
+
+Choosing the right combination of codecs and containers for broad accessibility is complex. Consider factors like browser support, platforms, and devices. For guidance, refer to resources on choosing the appropriate container and codecs for your content and audience.
+
+Additionally, mobile browsers might support formats not found in desktop versions, and both may offload media playback to external software. Media support depends on the user's installed software.
+
+To ensure video playback across various platforms and browsers, use the following HTML structure:
+
+```html
+<video controls>
+  <source src="rabbit320.mp4" type="video/mp4" />
+  <source src="rabbit320.webm" type="video/webm" />
+  <p>Your browser doesn't support this video. Here is a <a href="rabbit320.mp4">link to the video</a> instead.</p>
+</video>
+```
+
+In this example:
+
+- Separate `<source>` elements are used, pointing to different video sources (MP4 and WebM).
+- The browser will play the first supported source based on available codecs.
+- The optional `type` attribute in each `<source>` element specifies the MIME type, helping browsers skip unsupported formats.
+- A fallback `<p>` element provides a link if the browser can't play the video.
+
+This approach maximizes compatibility and ensures a better user experience.
