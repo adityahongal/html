@@ -1507,7 +1507,132 @@ At this stage, you've likely mastered the art of embedding content like images, 
 
 These elements provide versatile options for enhancing the richness of your web content.
 
-Example of embedding a youtube video and google maps
+**Example of embedding a youtube video and google maps using <iframe>**
 
 ![Alt maps](https://github.com/adityahongal/html/blob/main/images/embedding%20maps.png)
+
+
+**The <embed> and <object> elements**
+
+The `<embed>` and `<object>` elements have a distinct purpose compared to `<iframe>`. They function as general-purpose embedding tools for external content, like PDFs. However, it's worth noting that their usage is less common. When dealing with PDFs, it's often more practical to provide a link to the document rather than embedding it directly into the page.
+
+Historically, these elements were also employed for embedding content handled by browser plugins like Adobe Flash. However, due to the obsolescence of such technology, modern browsers no longer support it.
+
+When dealing with the need to embed plugin content, you'll require essential information, summarized as follows:
+
+| Element | URL of the Embedded Content | Accurate Media Type | Height and Width (in CSS pixels) | Parameters for the Plugin | Fallback HTML Content for Unavailable Resource |
+| ------- | --------------------------- | -------------------- | -------------------------------- | ------------------------- | ----------------------------------------------- |
+| `<embed>` | `src` attribute | `type` attribute | `height` and `width` attributes | Ad hoc attributes with names and values | Not supported ( `<noembed>` is obsolete) |
+| `<object>` | `data` attribute | `type` attribute | `height` and `width` attributes | Single-tag `<param>` elements, contained within `<object>` | Contained within `<object>`, after `<param>` elements |
+
+These elements, namely `<embed>` and `<object>`, offer a range of attributes and structures to embed and control plugin content while providing fallback options for scenarios where the resource is unavailable.
+
+Let's look at an `<object>` example that embeds a PDF into a page
+
+```html
+<object data="mypdf.pdf" type="application/pdf" width="800" height="1200">
+  <p>
+    You don't have a PDF plugin, but you can
+    <a href="mypdf.pdf">download the PDF file. </a>
+  </p>
+</object>
+```
+
+
+## Adding vector graphics to the web
+
+Vector graphics are very useful in many circumstances — they have small file sizes and are highly scalable, so they don't pixelate when zoomed in or blown up to a large size.
+
+On the web, you'll work with two types of images — raster images, and vector images:
+
+**Raster images** are defined using a grid of pixels — a raster image file contains information showing exactly where each pixel is to be placed, and exactly what color it should be. Popular web raster formats include Bitmap (.bmp), PNG (.png), JPEG (.jpg), and GIF (.gif.)
+
+**Vector images** are defined using algorithms — a vector image file contains shape and path definitions that the computer can use to work out what the image should look like when rendered on the screen. The `SVG` format allows us to create powerful vector graphics for use on the Web.
+
+**what is SVG ?**
+
+SVG (Scalable Vector Graphics) is an XML-based language used for describing vector images. Unlike HTML, SVG focuses on marking up graphics rather than content. It provides various elements to define shapes and apply effects to them. Basic shapes like <circle> and <rect>, along with advanced features such as <feColorMatrix>, <animate>, and <mask>, enable the creation of dynamic and scalable vector graphics.
+
+Here's a basic example of SVG code creating a circle and a rectangle:
+
+```html
+<svg
+  version="1.1"
+  baseProfile="full"
+  width="300"
+  height="200"
+  xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="black" />
+  <circle cx="150" cy="100" r="90" fill="blue" />
+</svg>
+```
+
+While simple SVG can be hand-coded, complex images are best created using vector graphics editors like Inkscape or Illustrator. SVG offers advantages such as accessibility for text, styling/scripting flexibility with CSS and JavaScript, and SEO benefits.
+
+However, SVG has its challenges:
+- Complex SVGs may lead to larger file sizes and increased browser processing time.
+- Creating intricate SVGs can be more challenging than raster images.
+- Raster graphics may be preferred for complex precision images like photos.
+
+Despite its complexities, SVG is a powerful tool for creating scalable and interactive vector graphics on the web.
+
+**Adding SVG to your pages**
+
+**The quick way: img element**
+
+To embed an SVG using an <img> element, simply reference the SVG file in the src attribute. Include height and/or width attributes as needed, ensuring proper sizing. Here's an example:
+
+```html
+<img
+  src="equilateral.svg"
+  alt="triangle with all three sides equal"
+  height="87"
+  width="100" />
+```
+
+**Pros:**
+- Familiar image syntax with a text equivalent provided in the alt attribute.
+- Easy conversion into a hyperlink by nesting the <img> inside an <a> element.
+- Browser caching can enhance loading times for pages using the same SVG image.
+
+**Cons:**
+- Limited manipulation with JavaScript.
+- Inline CSS styles are required for CSS control; external stylesheets have no effect.
+- CSS pseudoclasses (e.g., :focus) cannot be used for restyling.
+
+**How to include SVG code inside your HTML**
+
+To inline an SVG, open the SVG file in a text editor, copy the SVG code, and paste it directly into your HTML document. Ensure that the code snippet begins with an <svg> start tag and ends with an </svg> end tag. Here's a simple example:
+
+```html
+<svg width="300" height="200">
+  <rect width="100%" height="100%" fill="green" />
+</svg>
+```
+
+**Pros:**
+- Inlining SVG saves an HTTP request, potentially reducing loading time.
+- You can assign classes and ids to SVG elements and style them with CSS within the SVG or in the HTML document.
+- Allows the use of CSS interactions (like :focus) and CSS animations on the SVG image.
+- You can create hyperlinks by wrapping the SVG markup in an <a> element.
+
+**Cons:**
+- Suitable only if the SVG is used in a single place; duplication can lead to resource-intensive maintenance.
+- Increases the size of your HTML file due to extra SVG code.
+- Browser caching is not applicable to inline SVG, impacting loading times for subsequent pages.
+- Fallbacks in a <foreignObject> element may be included, but browsers supporting SVG will still download any fallback images. Consider the extra overhead for supporting obsolescent browsers.
+
+**How to embed an SVG with an iframe**
+
+To embed an SVG document using an `<iframe`, you can use the following example:
+
+```html
+<iframe src="triangle.svg" width="500" height="500" sandbox>
+  <img src="triangle.png" alt="Triangle with three unequal sides" />
+</iframe>
+```
+
+**Cons:**
+- iFrames have a fallback mechanism, but browsers only display the fallback if they lack support for iframes altogether.
+- If the SVG and your current webpage have different origins, you cannot use JavaScript on your main webpage to manipulate the SVG.
 
