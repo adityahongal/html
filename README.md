@@ -1636,3 +1636,142 @@ To embed an SVG document using an `<iframe`, you can use the following example:
 - iFrames have a fallback mechanism, but browsers only display the fallback if they lack support for iframes altogether.
 - If the SVG and your current webpage have different origins, you cannot use JavaScript on your main webpage to manipulate the SVG.
 
+
+## Responsive images
+
+🌅 **Why responsive images ?**
+
+The "art direction problem" and "resolution switching problem" are challenges associated with responsive web design, specifically concerning the handling of images. Let's break down each problem:
+
+1. **Art Direction Problem:**
+   
+   - **Issue:** The art direction problem arises when you want to display different portions or variations of an image based on different screen sizes or orientations. For example, you might want to show a close-up of a product on larger screens and a full view on smaller screens.
+   
+   - **Challenge:** Traditional responsive images (using only the `srcset` attribute) might resize the entire image based on the viewport, but they don't allow you to select different regions or versions of the image for different contexts.
+
+2. **Resolution Switching Problem:**
+   
+   - **Issue:** The resolution switching problem occurs when you want to provide images with different resolutions (pixel densities) for devices with varying screen capabilities (like Retina displays).
+   
+   - **Challenge:** Without proper handling, high-resolution images might be unnecessarily downloaded by devices with standard displays, leading to increased page load times and data usage.
+
+🌅 **How do you create responsive images ?**
+
+**Resolution switching: Different sizes**
+
+Displaying identical image content at different sizes based on the device.
+
+**Traditional Approach:**
+```html
+<img src="elva-fairy-800w.jpg" alt="Elva dressed as a fairy" />
+```
+
+**Improved Approach:**
+```html
+<img
+  srcset="elva-fairy-480w.jpg 480w, elva-fairy-800w.jpg 800w"
+  sizes="(max-width: 600px) 480px, 800px"
+  src="elva-fairy-800w.jpg"
+  alt="Elva dressed as a fairy"
+/>
+```
+
+**Explanation:**
+- `srcset`: Defines a set of images with sizes for the browser to choose from.
+  - Each set includes an image filename and its intrinsic width.
+  - Example: `elva-fairy-480w.jpg 480w, elva-fairy-800w.jpg 800w`
+
+- `sizes`: Specifies media conditions and the corresponding slot size for optimal image selection.
+  - Each condition is in the format `(media-condition) slot-size`.
+  - Example: `(max-width: 600px) 480px, 800px`
+
+**How it Works:**
+1. Browser evaluates media conditions.
+2. Chooses the first true condition.
+3. Loads the image from `srcset` that matches or is larger than the chosen slot.
+4. Optimizes bandwidth usage by selecting an image closest in size to the slot.
+
+**Benefits:**
+- Bandwidth savings, especially for pages with multiple images.
+- Improved loading times for devices with varying screen sizes.
+
+**Compatibility:**
+- Supported by modern browsers; older browsers ignore these attributes and load the default image specified in `src`.
+
+This technique provides responsive images that adapt to different screen sizes, optimizing user experience and bandwidth usage.
+
+**Resolution switching: Same size, different resolutions**
+
+Supporting multiple display resolutions while maintaining the same real-world size on the screen.
+
+**Simplified Approach:**
+```html
+<img
+  srcset="elva-fairy-320w.jpg, elva-fairy-480w.jpg 1.5x, elva-fairy-640w.jpg 2x"
+  src="elva-fairy-640w.jpg"
+  alt="Elva dressed as a fairy"
+/>
+```
+
+**CSS Style:**
+```css
+img {
+  width: 320px;
+}
+```
+
+**Explanation:**
+- `srcset`: Specifies a set of images with x-descriptors for different resolutions.
+  - Example: `elva-fairy-320w.jpg, elva-fairy-480w.jpg 1.5x, elva-fairy-640w.jpg 2x`
+
+**How it Works:**
+1. Browser determines the display resolution.
+2. Selects the most appropriate image from `srcset` based on x-descriptors.
+3. Applies CSS styling to maintain a consistent width of 320 pixels on the screen.
+
+**Benefits:**
+- Simplified syntax without the need for `sizes`.
+- Browser automatically selects the appropriate resolution image based on the device's display characteristics.
+
+**Optimization:**
+- Improved bandwidth usage by loading images closest in resolution to the display.
+
+This approach allows for responsive images with varying resolutions, adapting to different devices while maintaining a consistent real-world size on the screen.
+
+🌅 **Art Direction**
+
+**Art Direction Problem:**
+Adjusting displayed images to suit different display sizes, addressing issues like cropping or loss of detail on smaller screens.
+
+**Solution: `<picture>` Element**
+```html
+<picture>
+  <source media="(max-width: 799px)" srcset="elva-480w-close-portrait.jpg" />
+  <source media="(min-width: 800px)" srcset="elva-800w.jpg" />
+  <img src="elva-800w.jpg" alt="Chris holding his daughter Elva" />
+</picture>
+```
+
+**Explanation:**
+- `<picture>`: Wrapper for multiple `<source>` elements and a default `<img>`.
+- `<source>`: Contains media condition and srcset for different scenarios.
+  - Example: `(max-width: 799px)` — If viewport width is 799px or less.
+  - Example: `(min-width: 800px)` — If viewport width is 800px or more.
+  - `srcset`: Path to the image to display for the given condition.
+
+**How it Works:**
+1. Browser evaluates media conditions and selects the first true condition.
+2. Chooses the corresponding image specified in the selected `<source>` element.
+3. Renders the selected image.
+
+**Benefits:**
+- Allows tailored image selection based on viewport conditions.
+- Addresses art direction problems by providing different images for different scenarios.
+- Provides a default `<img>` for unsupported conditions or browsers.
+
+**Usage Tips:**
+- Use when you need specific images for different display scenarios.
+- Always include a default `<img>` for unsupported conditions.
+
+This approach enhances image presentation, offering flexibility to display images optimized for different screen sizes and addressing art direction concerns.
+
