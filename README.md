@@ -1219,4 +1219,70 @@ Check the specific license for detailed terms and conditions.
 
 Copyleft licenses, common in the software world, require projects built with their code to adopt the same license. This means that any new project using this code, known as a "fork," must also be open-source. Examples include the GNU General Public License (GPL) and "Share Alike" Creative Commons licenses. It ensures that the source code remains accessible for study and modification. Note that software licenses like GPL are not suitable for non-software works as they were designed specifically for software.
 
+💲**Public domain/CCO**
+
+Public domain means there are no copyright restrictions on a work, allowing it to be used freely. One effective way to contribute to the public domain is by using CC0, a Creative Commons license designed for this purpose. When using public domain images, obtain proof of their status, like a screenshot with licensing details. Keep records and consider adding a page to your website listing acquired images and their license requirements. This ensures clarity and compliance.
+
+📷 **Annotating images with figures and figure captions**
+
+
+To add captions to images in HTML, you can use the `<figure>` and `<figcaption>` elements for better accessibility. Instead of placing the caption outside the image container, use these elements to semantically link the image and its caption:
+
+```html
+<figure>
+  <img
+    src="images/dinosaur.jpg"
+    alt="The head and torso of a dinosaur skeleton;
+            it has a large head with long sharp teeth"
+    width="400"
+    height="341" />
+
+  <figcaption>
+    A T-Rex on display in the Manchester University Museum.
+  </figcaption>
+</figure>
+```
+
+This structure is more accessible as it clearly associates the caption with the image, benefiting users of screen readers. A `<figure>` doesn't have to be just an image; it can represent various types of content, providing essential information supporting the main text in a compact, easy-to-grasp way.
+
+📷 **CSS background images**
+
+The CSS `background-image` property, and the other `background-*` properties, are used to control background image placement. For example, to place a background image on every paragraph on a page, you could do this:
+
+```html
+p {
+  background-image: url("images/dinosaur.jpg");
+}
+```
+
+The resulting embedded image is arguably easier to position and control than HTML images. So why bother with HTML images? As hinted to above, CSS background images are for decoration only. If you just want to add something pretty to your page to enhance the visuals, this is fine. Though, such images have no semantic meaning at all. They can't have any text equivalents, are invisible to screen readers, and so on. This is where HTML images shine!
+
+📷 **Other graphics on the web**
+
+Beyond static images, the web provides advanced graphics capabilities:
+
+1. **Canvas:**
+   - `<canvas>` element allows drawing 2D graphics with JavaScript.
+   - Useful for creating dynamic visuals and animations.
+
+2. **SVG (Scalable Vector Graphics):**
+   - Utilizes geometric shapes for scalable 2D graphics.
+   - Ideal for clean, resizable images.
+
+3. **WebGL:**
+   - WebGL API facilitates 3D graphics using standard OpenGL ES.
+   - Enables immersive 3D experiences on the web.
+
+4. **HTML Audio and Video:**
+   - Similar to `<img>`, `<video>` and `<audio>` embed media for playback control.
+   - Enhances web pages with multimedia content.
+
+5. **WebRTC (Real-Time Communications):**
+   - Enables real-time audio/video streaming and data sharing.
+   - Facilitates communication between browser clients.
+
+These advanced graphics technologies offer dynamic, interactive, and multimedia-rich experiences on the web.
+
+
+🎥 **Video and Audio content**
 
