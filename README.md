@@ -1418,3 +1418,32 @@ Here are explanations of the additional features used in the video example:
   - Controls buffering for large files.
   - Options include "none" (no buffering), "auto" (buffers the entire media file), and "metadata" (buffers only the metadata).
 
+📢 **The <audio> element**
+
+The `<audio>` element functions similarly to the `<video>` element, with a few distinctions. Here's an example:
+
+```html
+<audio controls>
+  <source src="audio/viper.mp3" type="audio/mp3" />
+  <source src="audio/viper.ogg" type="audio/ogg" />
+  <p>Your browser doesn't support this audio file. Here is a <a href="viper.mp3">link to the audio</a> instead.</p>
+</audio>
+```
+
+This produces something like the following in a browser:
+
+![Alt Audio element](https://github.com/adityahongal/html/blob/main/images/audio%20element.png)
+
+
+The `<audio>` element is more compact than a video player as it lacks a visual component. Here are the differences and similarities compared to the HTML video element:
+
+**Differences:**
+- `<audio>` doesn't support the `width/height` attributes, as there is no visual component.
+- It also doesn't support the `poster` attribute, given the absence of a visual component.
+
+**Similarities:**
+- Otherwise, `<audio>` supports all the same features as `<video>`.
+- It can use the `controls` attribute for playback controls.
+- Multiple `<source>` elements can be used for different audio formats.
+- Fallback content can be included for unsupported browsers using additional HTML content within the `<audio>` element.
+
