@@ -1969,3 +1969,115 @@ The `span` attribute specifies the number of columns to which the styling applie
 
 ![Alt timetable](https://github.com/adityahongal/html/blob/main/images/simple%20timetable.png)
 
+##  HTML tables advanced features
+
+🪑 **Adding a caption to your table with <caption>**
+
+You can give your table a caption by putting it inside a `<caption>` element and nesting that inside the `<table>` element. You should put it just below the opening `<table>` tag.
+
+```html
+<table>
+  <caption>
+    Dinosaurs in the Jurassic period
+  </caption>
+
+  …
+</table>
+```
+
+🪑 **Adding structure with <thead>, <tfoot>, and <tbody>**
+
+When dealing with more complex table structures, it's beneficial to provide structural definition using `<thead>`, `<tfoot>`, and `<tbody>`. While these elements don't directly enhance accessibility, they serve as valuable hooks for styling and layout in CSS. They can be particularly useful for scenarios like repeating the header and footer on printed pages or controlling the display of the table body.
+
+Here's how to use them:
+
+- **`<thead>` (Table Header):**
+  - Wrap the part of the table that serves as the header.
+  - Usually includes the first row with column headings.
+  - If you're using `<col>/<colgroup>` elements, place the `<thead>` just below those.
+
+- **`<tfoot>` (Table Footer):**
+  - Wrap the part of the table that represents the footer.
+  - This might include a final row with items summed from previous rows.
+  - Can be placed at the bottom of the table or just below the table header.
+
+- **`<tbody>` (Table Body):**
+  - Wrap the other parts of the table content that aren't in the header or footer.
+  - Appears below the table header or footer, depending on your chosen structure.
+
+**Example:**
+
+```html
+<table>
+  <colgroup>
+    <!-- Define column styling if needed -->
+    <col style="width: 30%;" />
+    <col style="width: 40%;" />
+    <col style="width: 30%;" />
+  </colgroup>
+  
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Occupation</th>
+      <th>Location</th>
+    </tr>
+  </thead>
+  
+  <tfoot>
+    <tr>
+      <td>Total</td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tfoot>
+  
+  <tbody>
+    <tr>
+      <td>John Doe</td>
+      <td>Developer</td>
+      <td>New York</td>
+    </tr>
+    <!-- More rows... -->
+  </tbody>
+</table>
+```
+
+By structuring your table with these elements, you provide clear hooks for styling and layout adjustments.
+
+🪑 **Nesting tables**
+
+While it's possible to nest a table inside another one, it's generally not advised due to potential confusion and reduced accessibility. In most cases, adding extra cells, rows, or columns to the existing table is a more straightforward approach. However, there are scenarios, like content importation from other sources, where nesting might be necessary.
+
+Here's a simple example of a nested table:
+
+```html
+<table id="table1">
+  <tr>
+    <th>title1</th>
+    <th>title2</th>
+    <th>title3</th>
+  </tr>
+  <tr>
+    <td id="nested">
+      <table id="table2">
+        <tr>
+          <td>cell1</td>
+          <td>cell2</td>
+          <td>cell3</td>
+        </tr>
+      </table>
+    </td>
+    <td>cell2</td>
+    <td>cell3</td>
+  </tr>
+  <tr>
+    <td>cell4</td>
+    <td>cell5</td>
+    <td>cell6</td>
+  </tr>
+</table>
+```
+
+In this example, `table2` is nested inside a cell (`<td>` with `id="nested"`) of `table1`. While this structure is valid, use it judiciously, and favor simplicity for better markup clarity and accessibility.
+
