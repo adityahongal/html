@@ -1840,7 +1840,7 @@ In this example, I've added a second row with different cell contents. You can c
 ![Alt simpletable](https://github.com/adityahongal/html/blob/main/images/simple%20table.png)
 
 
-**Adding headers with <th> element**
+🪑 **Adding headers with <th> element**
 
 Certainly! Let's delve into the theory of adding headers to a table for better clarity:
 
@@ -1874,7 +1874,7 @@ Certainly! Let's delve into the theory of adding headers to a table for better c
 
 In summary, the inclusion of `<th>` elements in a table enhances the structure and usability of the table by providing clear labels for columns and rows. It's a best practice for creating well-organized and easily understandable tabular data.
 
-**Row span and Column span**
+🪑 **Row span and Column span**
 
 Certainly! Let's break down the theory of allowing cells to span multiple rows and columns using the `colspan` and `rowspan` attributes in HTML tables:
 
@@ -1905,4 +1905,67 @@ Example of simple Animal table
 
 ![Alt animal table](https://github.com/adityahongal/html/blob/main/images/simple%20animal%20table.png)
 
+
+
+### 🪑Styling Columns Without `<col>`
+
+In HTML tables, you can apply styling information to an entire column using `<col>` and `<colgroup>` elements. This is beneficial when you want to avoid repeating styling for every `<td>` or `<th>` in the column.
+
+#### Example Without `<col>`
+
+```html
+<table>
+  <tr>
+    <th>Data 1</th>
+    <th style="background-color: yellow">Data 2</th>
+  </tr>
+  <tr>
+    <td>Calcutta</td>
+    <td style="background-color: yellow">Orange</td>
+  </tr>
+  <tr>
+    <td>Robots</td>
+    <td style="background-color: yellow">Jazz</td>
+  </tr>
+</table>
+```
+
+#### Styling with `<col>`
+
+Instead of repeating styling information, use `<col>` inside a `<colgroup>` container just below the opening `<table>` tag.
+
+```html
+<table>
+  <colgroup>
+    <col />
+    <col style="background-color: yellow" />
+  </colgroup>
+  <tr>
+    <th>Data 1</th>
+    <th>Data 2</th>
+  </tr>
+  <tr>
+    <td>Calcutta</td>
+    <td>Orange</td>
+  </tr>
+  <tr>
+    <td>Robots</td>
+    <td>Jazz</td>
+  </tr>
+</table>
+```
+
+For styling both columns, use a single `<col>` element with a `span` attribute:
+
+```html
+<colgroup>
+  <col style="background-color: yellow" span="2" />
+</colgroup>
+```
+
+The `span` attribute specifies the number of columns to which the styling applies.
+
+### Simple example for a time table using rowspan and colspan
+
+![Alt timetable](https://github.com/adityahongal/html/blob/main/images/simple%20timetable.png)
 
