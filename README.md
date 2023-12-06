@@ -1874,3 +1874,35 @@ Certainly! Let's delve into the theory of adding headers to a table for better c
 
 In summary, the inclusion of `<th>` elements in a table enhances the structure and usability of the table by providing clear labels for columns and rows. It's a best practice for creating well-organized and easily understandable tabular data.
 
+**Row span and Column span**
+
+Certainly! Let's break down the theory of allowing cells to span multiple rows and columns using the `colspan` and `rowspan` attributes in HTML tables:
+
+1. **Introduction to `colspan` and `rowspan`:**
+   - In HTML tables, the `colspan` attribute is used to make a table cell span multiple columns.
+   - The `rowspan` attribute is used to make a table cell span multiple rows.
+
+2. **Use Cases for Spanning Cells:**
+   - Spanning cells is useful when you want to merge cells either horizontally or vertically to create a more visually organized and structured table.
+
+3. **Applying `colspan` Example:**
+   - To make a cell span multiple columns, add the `colspan` attribute with the desired number of columns to the `<th>` or `<td>` element.
+
+     ```html
+     <th colspan="2">Animals</th>
+     ```
+
+4. **Applying `rowspan` Example:**
+   - To make a cell span multiple rows, add the `rowspan` attribute with the desired number of rows to the `<th>` or `<td>` element.
+
+     ```html
+     <th rowspan="2">Horse</th>
+     ```
+
+In summary, `colspan` and `rowspan` are valuable attributes for creating more complex and visually appealing tables by allowing cells to extend across multiple columns or rows. They enhance the layout and organization of tabular data in HTML.
+
+Example of simple Animal table
+
+![Alt animal table](https://github.com/adityahongal/html/blob/main/images/simple%20animal%20table.png)
+
+
