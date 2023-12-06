@@ -1775,3 +1775,8 @@ Adjusting displayed images to suit different display sizes, addressing issues li
 
 This approach enhances image presentation, offering flexibility to display images optimized for different screen sizes and addressing art direction concerns.
 
+
+## Mozilla Splash Page example 
+
+![Alt mozillasplashpage](https://github.com/adityahongal/html/blob/main/images/mozilla%20splash%20page.png)
+
