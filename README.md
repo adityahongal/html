@@ -1799,3 +1799,78 @@ HTML tables should be used for tabular data, not for page layout. In the past, t
 
 In summary, using tables for layout instead of CSS layout techniques is not recommended due to issues related to accessibility, code complexity, and responsiveness.
 
+🪑 **Creating a table**
+
+Let's create a basic table structure with multiple rows.
+
+```html
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Simple Table Example</title>
+    <link href="minimal-table.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <h1>Simple Table Example</h1>
+
+    <table>
+        <tr>
+            <td>Hi, I'm your first cell.</td>
+            <td>I'm your second cell.</td>
+            <td>I'm your third cell.</td>
+            <td>I'm your fourth cell.</td>
+        </tr>
+        <tr>
+            <td>Row 2, Cell 1</td>
+            <td>Row 2, Cell 2</td>
+            <td>Row 2, Cell 3</td>
+            <td>Row 2, Cell 4</td>
+        </tr>
+        <!-- Add more rows as needed -->
+    </table>
+
+</body>
+</html>
+```
+
+In this example, I've added a second row with different cell contents. You can continue to add more rows following the same structure with `<tr>` for each row and `<td>` for each cell. Each `<tr>` element represents a new row, and the `<td>` elements inside it represent the cells in that row.
+
+![Alt simpletable](https://github.com/adityahongal/html/blob/main/images/simple%20table.png)
+
+
+**Adding headers with <th> element**
+
+Certainly! Let's delve into the theory of adding headers to a table for better clarity:
+
+1. **Introduction to Table Headers (`<th>`):**
+   - In HTML tables, headers are used to label and describe the content of rows and columns.
+   - The `<th>` (table header) element is employed to create header cells in a table.
+
+2. **Placement of Header Cells:**
+   - Header cells can be placed at the beginning of a row or at the start of a column.
+   - They are often used in the first row (`<tr>`) to label columns, and in the first column to label rows.
+
+3. **Benefits of Table Headers:**
+   - Headers make it clear what type of data is present in each column or row, improving readability.
+   - They provide context and help users understand the meaning of the data.
+
+4. **Example Usage:**
+   - The `<th>` element is used similarly to `<td>`, but it signifies a header cell.
+
+     ```html
+     <table>
+       <tr>
+         <th>&nbsp;</th>
+         <th>Knocky</th>
+         <th>Flor</th>
+         <th>Ella</th>
+         <th>Juan</th>
+       </tr>
+       <!-- ... More rows ... -->
+     </table>
+     ```
+
+In summary, the inclusion of `<th>` elements in a table enhances the structure and usability of the table by providing clear labels for columns and rows. It's a best practice for creating well-organized and easily understandable tabular data.
+
