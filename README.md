@@ -1780,3 +1780,22 @@ This approach enhances image presentation, offering flexibility to display image
 
 ![Alt mozillasplashpage](https://github.com/adityahongal/html/blob/main/images/mozilla%20splash%20page.png)
 
+
+## HTML tables
+
+🪑 **What is a table ?**
+
+HTML provides a way to structure and present tabular data on the web. Tables are a structured set of data with rows and columns, allowing easy lookup of values indicating connections between different types of data. They have been used in human society for a long time and are commonly employed to represent information such as a person's age, days of the week, or a timetable for a local swimming pool.
+
+🪑 **When should you NOT use HTML tables**
+
+HTML tables should be used for tabular data, not for page layout. In the past, tables were often misused to structure web page layouts due to poor CSS support across browsers. However, using tables for layout is discouraged for several reasons:
+
+1. **Reduced Accessibility:** Layout tables can decrease accessibility for visually impaired users. Screen readers, which are used by blind individuals, interpret HTML tags and provide information to users. Tables used for layout can create confusing output for screen readers.
+
+2. **Tag Soup:** Table layouts involve more complex markup compared to proper CSS layout techniques. This complexity can lead to code that is harder to write, maintain, and debug.
+
+3. **Non-Responsive:** Tables are not inherently responsive. Unlike proper layout containers (e.g., <header>, <section>, <article>, or <div>), which default to 100% width, tables are sized based on their content. Additional measures are required to make table layouts work effectively across various devices.
+
+In summary, using tables for layout instead of CSS layout techniques is not recommended due to issues related to accessibility, code complexity, and responsiveness.
+
